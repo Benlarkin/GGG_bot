@@ -32,3 +32,9 @@ for submission in subreddit.new(limit = 5):
         if submission.author == "Bex_GGG" or "Mark_GGG" or "chris_wilson":
             msg = "new post by GGG! link: " + postlink
             server.sendmail("you@gmail.com", "target@example.com", msg)
+            prt.append(submission)
+#save that post has been replied to
+with open("prt.txt", "w") as f:
+    for post_id in prt:
+        f.write(post_id + "\n")
+        
